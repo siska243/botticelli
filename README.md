@@ -1,4 +1,4 @@
 # botticelli
 # add database
-# connect database on /templates/taches
+# connect database mysql you can see it on the folder /templates/taches
 # make yarn watch
