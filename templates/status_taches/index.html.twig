@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}StatusTaches index{% endblock %}
+
+{% block body %}
+    <h1>StatusTaches index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Status</th>
+                <th>Slug</th>
+                <th>Color</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for status_tach in status_taches %}
+            <tr>
+                <td>{{ status_tach.id }}</td>
+                <td>{{ status_tach.status }}</td>
+                <td>{{ status_tach.slug }}</td>
+                <td>{{ status_tach.color }}</td>
+                <td>
+                    <a href="{{ path('app_status_taches_show', {'id': status_tach.id}) }}">show</a>
+                    <a href="{{ path('app_status_taches_edit', {'id': status_tach.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_status_taches_new') }}">Create new</a>
+{% endblock %}

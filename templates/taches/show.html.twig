@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Taches
+{% endblock %}
+
+{% block body %}
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="mb-0">Taches</h1>
+		<a href="{{ path('app_taches_index') }}" class="btn btn-dark">Retour à la liste</a>
+	</div>
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ tach.id }}</td>
+			</tr>
+			<tr>
+				<th>Tache</th>
+				<td>{{ tach.tache }}</td>
+			</tr>
+			<tr>
+				<th>Créer</th>
+				<td>{{ tach.createdAt ? tach.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<a href="{{ path('app_taches_edit', {'id': tach.id}) }}">edit</a>
+
+	{{ include('taches/_delete_form.html.twig') }}
+{% endblock %}

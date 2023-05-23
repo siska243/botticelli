@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Taches{% endblock %}
+
+{% block body %}
+
+<div class="d-flex justify-content-between align-items-center">
+    <h1 class="mb-0">Nouvelle taches</h1>
+        <a href="{{ path('app_taches_index') }}" class="btn btn-dark">Retour à la liste de taches</a>
+</div>
+
+    {{ include('taches/_form.html.twig') }}
+
+
+{% endblock %}
